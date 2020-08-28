@@ -96,7 +96,7 @@ config = hub.RunConfig(
     use_data_parallel=True,
     num_epoch=1,
     checkpoint_dir="module",
-    batch_size=32,
+    batch_size=20,
     eval_interval=400,
     strategy=strategy
 )
