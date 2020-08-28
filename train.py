@@ -88,14 +88,15 @@ strategy = hub.AdamWeightDecayStrategy(
     weight_decay=0.01,
     warmup_proportion=0.1,
     # learning_rate=5e-5,
+    lr_scheduler="linear_decay",
     learning_rate=5e-5)
 
 config = hub.RunConfig(
     use_cuda=True,
     use_data_parallel=True,
-    num_epoch=2,
+    num_epoch=1,
     checkpoint_dir="module",
-    batch_size=64,
+    batch_size=128,
     eval_interval=400,
     strategy=strategy
 )
