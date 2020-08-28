@@ -91,11 +91,11 @@ strategy = hub.AdamWeightDecayStrategy(
     learning_rate=5e-5)
 
 config = hub.RunConfig(
-    use_cuda=False,
+    use_cuda=True,
     use_data_parallel=True,
-    num_epoch=1,
+    num_epoch=2,
     checkpoint_dir="module",
-    batch_size=32,
+    batch_size=64,
     eval_interval=400,
     strategy=strategy
 )
