@@ -76,7 +76,7 @@ class ThuNews(BaseNLPDataset):
 
 dataset = ThuNews()
 
-module = hub.Module(name="ernie")
+module = hub.Module(name="ernie_tiny")
 reader = hub.reader.ClassifyReader(
     dataset=dataset,
     vocab_path=module.get_vocab_path(),
