@@ -11,7 +11,7 @@
     },
     "lac": {
       "init_args": {
-        "version": "1.1.0"
+        "version": "2.0.0"
       },
       "predict_args": {
         "batch_size": 1,
@@ -20,5 +20,6 @@
     }
   },
   "port": 8866,
-  "use_gpu": true
+  "use_multiprocess": false,
+  "workers": 2
 }
