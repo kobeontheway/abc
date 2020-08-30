@@ -18,8 +18,8 @@ parser.add_argument("--max_seq_len", type=int, default=128, help="max_seq_len, N
 parser.add_argument("--checkpoint_dir", type=str, default="module", help="Directory to model checkpoint")
 parser.add_argument("--eval_interval", type=int, default=400, help="xx interval to evaluate by dev dataset")
 parser.add_argument("--use_cuda", type=bool, default=True, help="is user gpu?")
-parser.add_argument("--saved_params_dir", type=str, default="", help="Directory for saving model during ")
-parser.add_argument("--model_path", type=str, default="", help="load model path")
+parser.add_argument("--saved_params_dir", type=str, default="saved_params_dir", help="Directory for saving model during ")
+parser.add_argument("--model_path", type=str, default="model_path", help="load model path")
 args = parser.parse_args()
 
 def is_path_valid(path):
