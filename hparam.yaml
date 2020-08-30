@@ -5,10 +5,10 @@ param_list:
     lower_than : 0.05
     greater_than : 0.000005
   - name : weight_decay
-    init_value : 0.1
+    init_value : 0.01
     type : float
-    lower_than : 1
-    greater_than : 0.0
+    lower_than : 0.1
+    greater_than : 0.01
   - name : batch_size
     init_value : 64
     type : int
