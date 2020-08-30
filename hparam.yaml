@@ -22,5 +22,5 @@ param_list:
   - name : max_seq_len
     init_value: 128
     type: int
-    lower_than: 512
+    lower_than: 256
     greater_than: 64
