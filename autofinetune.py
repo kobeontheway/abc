@@ -15,11 +15,11 @@ parser.add_argument("--learning_rate", type=float, default=5e-5, help="learning_
 parser.add_argument("--warmup_proportion", type=float, default=0.1, help="warmup_prop.")
 parser.add_argument("--weight_decay", type=float, default=0.01, help="weight_decay.")
 parser.add_argument("--max_seq_len", type=int, default=128, help="max_seq_len, Number of words of the longest seqence.")
-parser.add_argument("--checkpoint_dir", type=str, default="module", help="Directory to model checkpoint")
+parser.add_argument("--checkpoint_dir", type=str, default="autofinetune/checkpoint_dir", help="Directory to model checkpoint")
 parser.add_argument("--eval_interval", type=int, default=400, help="xx interval to evaluate by dev dataset")
 parser.add_argument("--use_cuda", type=bool, default=True, help="is user gpu?")
-parser.add_argument("--saved_params_dir", type=str, default="saved_params_dir", help="Directory for saving model during ")
-parser.add_argument("--model_path", type=str, default="model_path", help="load model path")
+parser.add_argument("--saved_params_dir", type=str, default="autofinetune/saved_params_dir", help="Directory for saving model during ")
+parser.add_argument("--model_path", type=str, default="autofinetune/model_path", help="load model path")
 args = parser.parse_args()
 
 def is_path_valid(path):
