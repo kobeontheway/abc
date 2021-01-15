@@ -1,10 +1,14 @@
+# coding: utf8
 import requests
 import json
 
-text = ["今天是个好日子", "天气预报说今天要下雨"]
-data = {"texts": text, "batch_size": 1}
-url = "http://10.1.12.64:8866/predict/lac"
-headers = {"Content-Type": "application/json"}
+if __name__ == "__main__":
+    # 指定用于用于预测的文本并生成字典{"text": [text_1, text_2, ... ]}
+    text_list = ["今天是个好日子", "天气预报说今天要下雨"]
+    text = {"text": text_list}
+    # 指定预测方法为lac并发送post请求
+    url = "http://10.1.12.33:8866/predict/text/lac"
+    r = requests.post(url=url, data=text)
 
-r = requests.post(url=url, headers=headers, data=json.dumps(data))
-print(json.dumps(r.json(), indent=4, ensure_ascii=False))
+    # 打印预测结果
+    print(json.dumps(r.json(), indent=4, ensure_ascii=False))
