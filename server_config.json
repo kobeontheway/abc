@@ -6,20 +6,26 @@
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": false
+        "use_gpu": true
       }
     },
     "lac": {
       "init_args": {
-        "version": "1.1.0"
+        "version": "2.1.0"
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": false
+        "use_gpu": true
+      }
+    },
+    "ernie_tiny": {
+      "predict_args": {
+        "batch_size": 1,
+        "use_gpu": true
       }
     }
   },
-  "port": 8866,
-  "use_multiprocess": false,
-  "workers": 2
+  "port": 6666,
+  "use_multiprocess": true,
+  "workers": 4
 }
