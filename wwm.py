@@ -3,6 +3,7 @@ import paddlehub as hub
 import pandas as pd
 import numpy as np
 import sys, csv
+import paddle
 
 train_data = pd.read_csv('./train_set.csv', sep='\t') #20万行
 train_data['text_a'] = train_data['text']
@@ -131,3 +132,7 @@ run_states = cls_task.finetune_and_eval()
 # result = pd.DataFrame()
 # result['label'] = [x for x in run_states]
 # result.to_csv('./submit.csv', index=None)
+
+
+
+paddle.dataset.uci_housing.test()

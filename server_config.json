@@ -17,9 +17,36 @@
         "batch_size": 1,
         "use_gpu": true
       }
+    },
+    "senta_lstm": {
+      "init_args": {
+        "version": "1.2.0"
+      },
+      "predict_args": {
+        "batch_size": 1,
+        "use_gpu": true
+      }
+    },
+    "vgg11_imagenet": {
+      "init_args": {
+        "version": "1.0.0"
+      },
+      "predict_args": {
+        "batch_size": 1,
+        "use_gpu": true
+      }
+    },
+    "deeplabv3p_xception65_humanseg": {
+      "init_args": {
+        "version": "1.0.0"
+      },
+      "predict_args": {
+        "batch_size": 1,
+        "use_gpu": true
+      }
     }
   },
-  "port": 6666,
+  "port": 8866,
   "use_multiprocess": true,
   "workers": 4
 }
