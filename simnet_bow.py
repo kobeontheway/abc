@@ -1,5 +1,6 @@
 import requests
 import json
+# 文本相似度
 
 # 待预测数据
 test_text_1 = ["这道题太难了", "这道题太难了", "这道题太难了"]

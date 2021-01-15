@@ -2,11 +2,11 @@
   "modules_info": {
     "yolov3_darknet53_coco2017": {
       "init_args": {
-        "version": "1.0.0"
+        "version": "1.1.1"
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": true
+        "use_gpu": false
       }
     },
     "lac": {
@@ -15,7 +15,7 @@
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": true
+        "use_gpu": false
       }
     },
     "senta_lstm": {
@@ -24,7 +24,7 @@
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": true
+        "use_gpu": false
       }
     },
     "vgg11_imagenet": {
@@ -33,7 +33,7 @@
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": true
+        "use_gpu": false
       }
     },
     "deeplabv3p_xception65_humanseg": {
@@ -42,7 +42,7 @@
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": true
+        "use_gpu": false
       }
     },
     "simnet_bow": {
@@ -51,7 +51,7 @@
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": true
+        "use_gpu": false
       }
     },
     "porn_detection_lstm": {
@@ -60,7 +60,7 @@
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": true
+        "use_gpu": false
       }
     },
     "stgan_celeba": {
@@ -69,7 +69,7 @@
       },
       "predict_args": {
         "batch_size": 1,
-        "use_gpu": true
+        "use_gpu": false
       }
     }
   },
