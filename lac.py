@@ -10,7 +10,8 @@ if __name__ == "__main__":
     # 对应本地部署，则为lac.analysis_lexical(texts=[text1, text2])
     data = {"texts": text, "batch_size": 2}
     # 指定预测方法为lac并发送post请求
-    url = "http://10.1.12.33:8866/predict/lac"
+    url = "http://10.1.12.33:8866/predict/text/lac"
+    # url = "http://10.1.12.33:8866/predict/lac"
     # 指定post请求的headers为application/json方式
     headers = {"Content-Type": "application/json"}
 
