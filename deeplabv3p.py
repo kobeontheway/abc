@@ -1,27 +1,37 @@
-# coding: utf8
 import requests
 import json
+import cv2
 import base64
 import os
-# 图像分割-done
+import numpy as np
 
-if __name__ == "__main__":
-    # 指定要使用的图片文件并生成列表[("image", img_1), ("image", img_2), ... ]
-    file_list = ["img/girl.jpg"]
-    files = [("image", (open(item, "rb"))) for item in file_list]
-    # 指定图片分割方法为deeplabv3p_xception65_humanseg并发送post请求
-    url = "http://10.1.12.33:8866/predict/image/deeplabv3p_xception65_humanseg"
-    r = requests.post(url=url, files=files)
+# 图像分割
 
-    # 保存分割后的图片到output文件夹，打印模型输出结果
-    if not os.path.exists("output"):
-        os.mkdir("output")
 
-    results = eval(r.json()["results"])
-    for item in results:
-        with open(
-                os.path.join("output", item["processed"].split("/")[-1]),
-                "wb") as fp:
-            fp.write(base64.b64decode(item["base64"].split(',')[-1]))
-            item.pop("base64")
-    print(json.dumps(results, indent=4, ensure_ascii=False))
+def cv2_to_base64(image):
+    data = cv2.imencode('.jpg', image)[1]
+    return base64.b64encode(data.tostring()).decode('utf8')
+
+
+def base64_to_cv2(b64str):
+    data = base64.b64decode(b64str.encode('utf8'))
+    data = np.fromstring(data, np.uint8)
+    data = cv2.imdecode(data, cv2.IMREAD_COLOR)
+    return data
+
+
+# 发送HTTP请求
+data = {'images':[cv2_to_base64(cv2.imread("./img/girl.jpg"))]}
+headers = {"Content-type": "application/json"}
+url = "http://10.1.12.33:8866/predict/deeplabv3p_xception65_humanseg"
+r = requests.post(url=url, headers=headers, data=json.dumps(data))
+
+result = r.json()["results"][0]['data']
+
+with open(
+        os.path.join("output", "out.jpg"),
+        "wb") as fp:
+    fp.write(base64.b64decode(result))
+
+# 打印预测结果
+# print(base64_to_cv2(result))

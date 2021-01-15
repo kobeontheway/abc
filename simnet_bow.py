@@ -10,7 +10,7 @@ text = [test_text_1, test_text_2]
 
 # 设置运行配置
 # 对应本地预测simnet_bow.similarity(texts=text, batch_size=1, use_gpu=True)
-data = {"texts": text, "batch_size": 1, "use_gpu":True}
+data = {"texts": text, "batch_size": 1, "use_gpu":False}
 
 # 指定预测方法为simnet_bow并发送post请求，content-type类型应指定json方式
 # HOST_IP为服务器IP
