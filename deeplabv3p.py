@@ -3,6 +3,7 @@ import requests
 import json
 import base64
 import os
+# 图像分割-done
 
 if __name__ == "__main__":
     # 指定要使用的图片文件并生成列表[("image", img_1), ("image", img_2), ... ]

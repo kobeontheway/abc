@@ -3,7 +3,7 @@ import requests
 import json
 import base64
 import os
-# 目标检测
+# 目标检测-done
 
 
 if __name__ == "__main__":
