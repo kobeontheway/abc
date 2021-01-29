@@ -14,7 +14,7 @@ data = {"texts": text, "batch_size": 1, "use_gpu":False}
 
 # 指定预测方法为simnet_bow并发送post请求，content-type类型应指定json方式
 # HOST_IP为服务器IP
-url = "http://10.1.12.33:8866/predict/simnet_bow"
+url = "http://10.1.12.85:8866/predict/simnet_bow"
 headers = {"Content-Type": "application/json"}
 r = requests.post(url=url, headers=headers, data=json.dumps(data))
 

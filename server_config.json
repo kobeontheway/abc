@@ -71,6 +71,15 @@
         "batch_size": 1,
         "use_gpu": false
       }
+    },
+    "transformer_tts_ljspeech": {
+      "init_args": {
+        "version": "1.0.0"
+      },
+      "predict_args": {
+        "batch_size": 1,
+        "use_gpu": false
+      }
     }
   },
   "port": 8866,

@@ -12,7 +12,7 @@ if __name__ == "__main__":
     # 为每张图片对应指定info和style
     data = {"info": ["Male,Black_Hair"], "style": ["Bald"]}
     # 指定图片生成方法为stgan_celeba并发送post请求
-    url = "http://10.1.12.33:8866/predict/image/stgan_celeba"
+    url = "http://10.1.12.85:8866/predict/image/stgan_celeba"
     r = requests.post(url=url, data=data, files=files)
 
     # 保存生成的图片到output文件夹，打印模型输出结果

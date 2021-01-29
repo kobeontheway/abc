@@ -23,7 +23,7 @@ def base64_to_cv2(b64str):
 # 发送HTTP请求
 data = {'images':[cv2_to_base64(cv2.imread("./img/girl.jpg"))]}
 headers = {"Content-type": "application/json"}
-url = "http://10.1.12.33:8866/predict/deeplabv3p_xception65_humanseg"
+url = "http://10.1.12.85:8866/predict/deeplabv3p_xception65_humanseg"
 r = requests.post(url=url, headers=headers, data=json.dumps(data))
 
 result = r.json()["results"][0]['data']
