@@ -137,8 +137,9 @@ optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4, weight_decay=1e-3)
 
 class SoftDiceLoss(nn.Module):
     def __init__(self, smooth=1., dims=(-2,-1)):
+
         super(SoftDiceLoss, self).__init__()
-        self.smooth = smooth,
+        self.smooth = smooth
         self.dims = dims
 
     def forward(self, x, y):
