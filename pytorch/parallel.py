@@ -19,18 +19,18 @@ class ModelParallelResNet50(ResNet):
 
             self.layer1,
             self.layer2
-        ).to('cpu:0')
+        ).to('cpu:-1')
 
         self.seq2 = nn.Sequential(
             self.layer3,
             self.layer4,
             self.avgpool,
-        ).to('cpu:1')
+        ).to('cpu:0')
 
-        self.fc.to('cpu:1')
+        self.fc.to('cpu:0')
 
     def forward(self, x):
-        x = self.seq2(self.seq1(x).to('cpu:1'))
+        x = self.seq2(self.seq1(x).to('cpu:0'))
         return self.fc(x.view(x.size(0), -1))
 
 
@@ -82,7 +82,7 @@ mp_run_times = timeit.repeat(
 mp_mean, mp_std = np.mean(mp_run_times), np.std(mp_run_times)
 
 setup = "import torchvision.models as models;" + \
-        "model = models.resnet50(num_classes=num_classes).to('cuda:0')"
+        "model = models.resnet50(num_classes=num_classes).to('cpu:0')"
 rn_run_times = timeit.repeat(
     stmt, setup, number=1, repeat=num_repeat, globals=globals())
 rn_mean, rn_std = np.mean(rn_run_times), np.std(rn_run_times)
