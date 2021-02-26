@@ -19,7 +19,7 @@ class ModelParallelResNet50(ResNet):
 
             self.layer1,
             self.layer2
-        ).to('cpu:-1')
+        ).to('cpu:0')
 
         self.seq2 = nn.Sequential(
             self.layer3,
